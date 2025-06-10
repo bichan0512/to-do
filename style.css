@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 커스텀 귀여운 스타일 */
+body {
+  background: #f9e7fe;
+}
+
+h1 {
+  font-family: 'Pretendard', 'Noto Sans KR', 'Malgun Gothic', Arial, sans-serif;
+  color: #ff80ab;
+  letter-spacing: 1px;
+  font-weight: 700;
+  /* 이모지 추가 */
+  position: relative;
+}
+h1::before {
+  content: '📝 ';
+  font-size: 1.3em;
+  position: relative;
+  top: 2px;
+}
+h1::after {
+  content: ' ✨';
+  font-size: 1.1em;
+  position: relative;
+  top: 2px;
+}
+
+input[type="text"], input[type="date"], select {
+  background: #fff8fb;
+  border: 2px solid #ffd6e0;
+  transition: box-shadow 0.2s;
+}
+input[type="text"]:focus, input[type="date"]:focus, select:focus {
+  box-shadow: 0 0 0 2px #ffb6d5;
+  border-color: #ffb6d5;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #ffb6d5 0%, #b2ebf2 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  transition: background 0.2s, transform 0.1s;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #ff80ab 0%, #4dd0e1 100%);
+  transform: scale(1.05);
+}
+button[type="submit"]::before {
+  content: '➕ ';
+  font-size: 1em;
+}
+
+#todo-list li {
+  background: #fff8fb;
+  border: 1.5px solid #ffd6e0;
+  transition: box-shadow 0.2s;
+}
+#todo-list li::before {
+  content: '🌸';
+  margin-right: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+#todo-list li:hover::before {
+  content: '💖';
+}
+#todo-list li:hover {
+  box-shadow: 0 2px 8px #ffb6d540;
+}
+
+#todo-list .line-through {
+  color: #bdbdbd !important;
+  text-decoration-thickness: 2.5px;
+}
+
+.text-red-500 {
+  color: #ff80ab !important;
+}
+.text-red-500:hover, .text-red-700:hover {
+  color: #d81b60 !important;
+}
+.text-red-500::after {
+  content: ' 🗑️';
+  font-size: 1em;
+}
